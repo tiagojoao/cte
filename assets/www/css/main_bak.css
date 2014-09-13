@@ -1,0 +1,54 @@
+#main {
+	height: 100%;
+}
+#mainMenu {
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+#mainImage {
+	height: 50%;
+	width: 100%;
+}
+#textNextEvt {
+	background-color: #ffffff;
+	opacity: 0.4;
+}
+#topMenu{
+}
+#botMenu {
+}
+.paddingMenu{
+}
+#titleNextEvt {
+	opacity: 1;
+	position: relative;
+	margin-top: 60%;
+	color: red;
+}
+.texto_menu {
+	color: #3f3f3f;
+	font-style: none;
+	font-size: 12px;
+}
+.btnMenu {
+	width: 15%;
+}
+.menu_btn {
+	margin: 0 auto;
+	width: 20%;
+}
+#butao {
+	margin: 0 auto;
+	text-align: center;
+}
+.ui-grid-b a {
+	margin: 0 auto;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-bottom: none;
+	border-left: none;
+}

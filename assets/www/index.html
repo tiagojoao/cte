@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="format-detection" content="telephone-no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    
+    <title>CTE</title>
+    
+    <link rel="stylesheet" href="css/jquerymobile.css" />
+    <link rel="stylesheet" href="css/themes/cte1.css" />
+    <link href="css/default.google.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome/jqm-icon-pack-fa.css" />
+    <link rel="stylesheet" href="css/main.css">    
+</head>
+<body>
+    <div data-role="page" id="main">
+        <div id="mainMenu" style="height: 100%;" data-role="none">
+            <script type="text/javascript">
+            document.write("<div id='mainImage' style='background-color: white; width: 100%; height:"+window.innerHeight*0.4+"px;'><img src='icons/logo_cte.png' /></div>");
+            document.write("<div style='background-color: white; width: 100%; height:"+window.innerHeight*0.2+"px;'><div id='infoNextEvt' style='float: left;'><h1 id='titleNextEvt'></h1><h3 id='textNextEvt'></h3></div><div id='iconSwipe'><img src='icons/swipe.png' style='height: 40px; width: 40px;'></div></div>");
+            document.write("<div class='ui-grid-b' style='background-color: white; width: 100%; height:"+window.innerHeight*0.4+"px;'>");
+            </script>
+            <a href="#agenda" id="btnAgenda" class="ui-block-a" style="height: 50%; padding-top: 10%;">
+                <img class="menu_btn" src="icons/agenda.png" />
+                <p class="texto_menu">Agenda</p>
+            </a>
+            <a href="#noticias" class="ui-block-b" style="height: 50%; padding-top: 10%;">
+                <img class="menu_btn" src="icons/noticias.png">
+                <p class="texto_menu">Notícias</p>
+            </a>
+            <a href="#favoritos" class="ui-block-c" style="height: 50%; padding-top: 10%;">
+                <img class="menu_btn" src="icons/favoritos.png">
+                <p class="texto_menu">Favoritos</p>
+            </a>
+            <a href="#" class="ui-block-a newPageRed" style="height: 50%; padding-top: 10%;">
+                <img class="menu_btn" src="icons/bilhetes.png">
+                <p class="texto_menu">Bilheteira</p></a>
+                <a href="#contactos" class="ui-block-b" style="height: 50%; padding-top: 10%;">
+                    <img class="menu_btn" src="icons/mapa.png">   
+                    <p class="texto_menu">Contactos</p>
+                </a>
+                <a href="#passatempos" class="ui-block-c" style="height: 50%; padding-top: 10%;">
+                    <img class="menu_btn" src="icons/jogos.png">
+                    <p class="texto_menu">Jogos</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="evento"></div>
+    <div id="noticia"></div>
+    <div data-role="page" id="noticias">
+        <div data-role="header" class="addMenus">
+
+            <a href="#mypanel" data-role="button" data-icon="reorder" data-iconpos="notext"></a>
+            <h1>Noticias</h1>
+
+        </div>
+        <div data-role="content">
+            <div class="gif"></div>
+            <div class="noticiaContent" data-filter-icon="arrow-l" data-filter="true" data-filter-placeholder="Pesquisar" >
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="agenda">
+        <div data-role="header" class="addMenus">
+
+            <a href="#mypanel" data-role="button" data-icon="reorder" data-iconpos="notext"></a>
+            <h1>Agenda</h1>
+
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" class="agendaContent" data-filter="true" data-filter-placeholder="Pesquisar" >
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="passatempos">
+        <div data-role="header" class="addMenus">
+            <h1>Jogos</h1>
+        </div>
+        <div data-role="content">
+            <div class="panel">De momento não se encontram jogos disponíveis.</div>
+        </div>
+    </div>
+
+    <div data-role="page" id="favoritos">
+        <div data-role="header" class="addMenus">
+            <a href="#mypanel" data-role="button" data-icon="reorder" data-iconpos="notext"></a>
+            <h1>Favoritos</h1>
+
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" class="favoritosContent" data-filter="true" data-filter-placeholder="Pesquisar" >
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="storage">
+        <div data-role="header" class="addMenus">
+
+            <a href="#mypanel" data-role="button" data-icon="reorder" data-iconpos="notext"></a>
+            <h1>Agenda</h1>
+
+        </div>
+        <div data-role="content">
+
+        </ul>
+    </div>
+</div>
+
+<div data-role="page" id="contactos">
+    <div data-role="header" class="addMenus">
+
+        <a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" class="addMenus"></a>
+        <h1>Contactos </h1>
+        
+    </div>
+    <div data-role="content">
+        <div id="map" data-role="content" style="height:250px">
+        </div>
+        <div id="desc_contatos" class="panel">
+            <p>Rua Visconde Valdemouro</p>
+            3860-389 Estarreja</p>
+            <b>Tel:</b> 234 811 300</p>
+            <b>E-mail:</b> cineteatro@cm-estarreja.pt</p>
+        </div>
+    </div>
+</div>
+<div data-role="page" id="recomenda">
+    <div data-role="header" >
+
+        <a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+        <h1>Agenda</h1>
+        
+    </div>
+    <div data-role="content">
+        <form>
+            <input type="text" data-clear-btn="false" name="text-3" id="text-3" value="" placeholder="Nome">
+            <input type="text" data-clear-btn="false" name="email-1" id="email-1" value="" placeholder="Nome do destinatário">
+            <input type="email" data-clear-btn="false" name="email-1" id="email-1" value="" placeholder="Endereço de e-mail do destinatário">
+            <input type="text" data-clear-btn="false" name="text-3" id="text-3" value="" placeholder="Assunto">
+            <textarea cols="40" rows="18" name="textarea-1" id="textarea-1" placeholder="Mensagem"></textarea>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery1.9.1.min.js"></script>
+<script type="text/javascript" src="js/cordova.js"></script>
+<script type="text/javascript" src="js/jsapi.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="js/jsonp.js"></script>
+<script src="js/SmsSendingPlugin.js"></script>
+<script src="js/LocalNotification.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/jquery.mobile.js"></script>
+<script src="cordova.ios.js"></script>
+
+</body>
+</html>
+
+
+
+

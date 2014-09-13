@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+       Licensed to the Apache Software Foundation (ASF) under one
+       or more contributor license agreements.  See the NOTICE file
+       distributed with this work for additional information
+       regarding copyright ownership.  The ASF licenses this file
+       to you under the Apache License, Version 2.0 (the
+       "License"); you may not use this file except in compliance
+       with the License.  You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing,
+       software distributed under the License is distributed on an
+       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+       KIND, either express or implied.  See the License for the
+       specific language governing permissions and limitations
+       under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:windowSoftInputMode="adjustPan"
+      package="com.ctee.android" android:versionName="1.0" android:versionCode="1" android:hardwareAccelerated="true">
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"
+        android:resizeable="true"
+        android:anyDensity="true"
+        />
+	
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />   
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.test.test.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.test.test.permission.C2D_MESSAGE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> 
+	<!-- Only this application can receive the messages and registration result -->
+ 
+<!-- This app has permission to register and receive message -->
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+ 
+<!-- Send the registration id to the server -->
+<uses-permission android:name="android.permission.INTERNET" />
+ 
+<!-- App must have this permission to use the library -->
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+        android:hardwareAccelerated="true"
+        android:launchMode="singleTop"
+        android:debuggable="true">
+        <activity android:name="cte" android:label="@string/app_name"
+                android:theme="@android:style/Theme.Black.NoTitleBar"
+                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+                android:screenOrientation="portrait"
+                android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name="com.plugin.gcm.PushHandlerActivity"/>
+        <receiver android:name="com.plugin.gcm.CordovaGCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.test.test" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.plugin.gcm.GCMIntentService" />
+        <activity android:name="com.plugin.GCM.PushHandlerActivity_bak"/>
+		<receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
+		  <intent-filter>
+		    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		    <category android:name="com.ctee.android" />
+		  </intent-filter>
+		</receiver>
+		<service android:name="com.google.android.gcm.GCMIntentService" />
+		<activity android:name="com.arellomobile.android.push.PushWebview" />
+<activity android:name="com.arellomobile.android.push.MessageActivity" />
+<activity android:name="com.arellomobile.android.push.PushHandlerActivity" />
+ 
+<!-- In order to use the c2dm library, an
+       application must declare a class with the name C2DMReceiver, in its
+       own package, extending com.google.android.c2dm.C2DMBaseReceiver
+   -->
+<service android:name="com.arellomobile.android.push.C2DMReceiver" />
+ 
+<!-- Only Google services can send messages to the app. If this permission weren't set
+     any other app would be able to send messages to us. -->
+<receiver android:name="com.google.android.c2dm.C2DMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+   <!-- Receive the actual message -->
+   
+   <intent-filter>
+       <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name="com.ctee.android" />
+   </intent-filter>
+   <!-- Receive the registration id -->
+   <intent-filter>
+       <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        <category android:name="com.ctee.android" />
+    </intent-filter>
+    <intent-filter>
+   <action android:name="com.ctee.android.MESSAGE" />
+   <category android:name="android.intent.category.DEFAULT" />
+</intent-filter>
+
+</receiver>
+<receiver android:name="com.bicrement.plugins.localNotification.AlarmReceiver" >
+</receiver>
+
+<receiver android:name="com.bicrement.plugins.localNotification.AlarmRestoreOnBoot" >
+  <intent-filter>
+      <action android:name="android.intent.action.BOOT_COMPLETED" />
+  </intent-filter>
+</receiver>
+    </application>
+
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="17"/>
+</manifest> 
